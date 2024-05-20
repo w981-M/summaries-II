@@ -1,0 +1,50 @@
+Método del Árbol Semántico (Tableaux)
+
+    Complejitud Computacional:
+        Tiempo: En el peor de los casos, el método del árbol semántico puede tener un tiempo de ejecución exponencial en el tamaño de la fórmula. Esto se debe a que puede ser necesario explorar todas las ramas del árbol.
+        Espacio: También puede requerir espacio exponencial, ya que el árbol puede crecer exponencialmente con respecto al número de variables y operadores en la fórmula.
+
+    Mecanismo:
+        Consiste en descomponer la fórmula lógica en sus componentes más básicos, creando ramas que representan las diferentes posibles asignaciones de verdad.
+        Si todas las ramas del árbol conducen a una contradicción, la fórmula es válida (tautología).
+        Si al menos una rama no conduce a una contradicción, la fórmula es satisfactible.
+
+    Ventajas y Desventajas:
+        Ventajas: Es intuitivo y fácil de implementar. Puede ser más claro para la enseñanza y para problemas pequeños.
+        Desventajas: No es eficiente para fórmulas grandes debido a la explosión combinatoria.
+
+Método de Resolución
+
+    Complejitud Computacional:
+        Tiempo: También puede ser exponencial en el peor de los casos. Sin embargo, en la práctica, es a menudo más eficiente que el método del árbol semántico.
+        Espacio: Puede ser significativo, ya que puede generar un gran número de cláusulas intermedias durante el proceso de resolución.
+
+    Mecanismo:
+        La fórmula lógica se convierte en una forma normal conjuntiva (CNF).
+        Se aplican reglas de resolución para derivar nuevas cláusulas. Si se puede derivar una cláusula vacía, la fórmula original es insatisfactible (demostración por contradicción).
+        Es el fundamento de muchos algoritmos de SAT solvers modernos.
+
+    Ventajas y Desventajas:
+        Ventajas: Más sistemático y puede ser optimizado. Es la base de muchos solvers de SAT eficientes.
+        Desventajas: Puede ser menos intuitivo y más complicado de implementar que el método del árbol semántico.
+
+Método de Resolución con Cláusulas de Horn
+
+    Complejitud Computacional:
+        Tiempo: La resolución de cláusulas de Horn es polinómica, específicamente P-completa. Esto significa que puede ser resuelta en tiempo polinómico, lo que la hace mucho más eficiente que la resolución general.
+        Espacio: También es manejable en términos polinómicos.
+
+    Mecanismo:
+        Las cláusulas de Horn son una forma especial de cláusulas en CNF, donde cada cláusula tiene a lo sumo un literal positivo.
+        La resolución de cláusulas de Horn utiliza una técnica de unificación más simple y directa que en el caso general.
+        Es especialmente adecuada para la deducción en bases de conocimiento y en sistemas de reglas.
+
+    Ventajas y Desventajas:
+        Ventajas: Extremadamente eficiente en comparación con la resolución general. Es adecuada para aplicaciones prácticas como bases de datos deductivas y ciertos sistemas de inteligencia artificial.
+        Desventajas: La limitación principal es que sólo puede aplicarse a problemas que pueden ser expresados como cláusulas de Horn.
+
+Comparación General
+
+    Método del Árbol Semántico: Ofrece una visualización clara y es útil para problemas pequeños, pero su escalabilidad es limitada debido a la explosión combinatoria.
+    Método de Resolución: Más eficiente y sistemático, adecuado para una amplia variedad de problemas lógicos, aunque puede ser complejo de implementar y manejar grandes volúmenes de datos.
+    Resolución con Cláusulas de Horn: Es el más eficiente en términos computacionales para problemas específicos que pueden ser formulados con cláusulas de Horn, pero no es aplicable a todos los problemas lógicos
